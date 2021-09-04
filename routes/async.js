@@ -1,27 +1,24 @@
 var http = require('http');
 const fetch = require('node-fetch');
 
-const fetchingData = ("") 
+const fetchingData = ("")
 
 async function userData() {
-    
-    try{
+
+    try {
         const response = await fetch("https://jsonplaceholder.typicode.com/users");
-        
-        if(response.status===400)
-        {
+        if (response.status === 400) {
             console.log("bad request");
         }
-        else{
-           const data = await response.json();
-           console.log(data);
+        else {
+            const data = await response.json();
+            console.log(data);
         }
-        
     }
-    catch(error){
+    catch (error) {
         console.log(error);
     }
-    
+
 }
 userData();
 
